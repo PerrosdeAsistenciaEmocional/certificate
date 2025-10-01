@@ -1,0 +1,164 @@
+
+:root{
+  --bg:#0f172a; /* slate-900 */
+  --card:#111827; /* gray-900 */
+  --text:#e5e7eb; /* gray-200 */
+  --muted:#9ca3af; /* gray-400 */
+  --accent:#22c55e; /* green-500 */
+  --accent-2:#06b6d4; /* cyan-500 */
+  --warning:#f59e0b; /* amber-500 */
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji";background:var(--bg);color:var(--text);}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+.header{position:sticky;top:0;background:rgba(15,23,42,.85);backdrop-filter:blur(6px);border-bottom:1px solid #1f2937;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px}
+.brand{display:flex;gap:10px;align-items:center}
+.brand img{width:36px;height:36px;border-radius:8px}
+.brand-name{font-weight:700;letter-spacing:.3px}
+.menu{display:flex;gap:16px}
+.menu a{padding:10px 12px;border-radius:10px}
+.menu a.active,.menu a:hover{background:#1f2937}
+.hamb{display:none;gap:6px;flex-direction:column}
+.hamb span{width:24px;height:2px;background:#e5e7eb;border-radius:2px}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:40px 0}
+.card{background:var(--card);border:1px solid #1f2937;border-radius:16px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.grid{display:grid;gap:16px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#0b3a3a;padding:6px 10px;border-radius:999px;color:#9ff2ff;font-size:12px;border:1px solid #164e63}
+.btn{display:inline-block;background:var(--accent);color:#052e16;font-weight:700;padding:12px 16px;border-radius:12px;border:0;cursor:pointer}
+.btn[disabled]{opacity:.6;cursor:not-allowed}
+.kicker{color:var(--muted);font-size:14px}
+.section{padding:36px 0}
+.footer{border-top:1px solid #1f2937;margin-top:40px;padding:24px 0;color:var(--muted)}
+.notice{font-size:12px;color:#9ca3af}
+.img-fit{width:100%;height:100%;object-fit:cover;border-radius:12px;border:1px solid #1f2937}
+.list{display:grid;gap:12px}
+.list li{background:#0b1220;border:1px solid #1f2937;padding:12px 14px;border-radius:10px}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{border-bottom:1px solid #1f2937;padding:10px;text-align:left}
+.highlight{color:#bbf7d0}
+@media (max-width: 900px){
+  .hero{grid-template-columns:1fr}
+  .menu{display:none;position:absolute;right:16px;top:60px;background:var(--card);border:1px solid #1f2937;border-radius:12px;padding:8px 8px}
+  .menu.open{display:flex;flex-direction:column}
+  .hamb{display:flex}
+}
+.table td {
+  text-align: center;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 12px 16px;   /* <-- más aire horizontal */
+  text-align: center;   /* <-- centra el contenido */
+}
+
+.footer {
+  background: var(--card);
+  padding: 16px;
+  text-align: center;   /* 👈 centra todo el texto */
+}
+
+.footer .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer .notice {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.2);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slides img {
+  width: 100%;
+  height: 450px;         /* 👈 todas las imágenes misma altura */
+  object-fit: cover;     /* 👈 recorta y centra */
+  flex-shrink: 0;
+}
+
+/* Botones de navegación del carrusel */
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* tamaño cuadrado = círculo perfecto */
+  width: 44px;              /* sube a 52–56px si las quieres más grandes */
+  height: 44px;
+  border-radius: 50%;
+  /* centrado del símbolo */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* tipografía del símbolo */
+  font-size: 20px;          /* ajusta 18–24 según gusto */
+  line-height: 1;           /* evita que se alargue por line-height */
+  /* estilos visuales */
+  border: none;
+  background: rgba(0,0,0,.40);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  cursor: pointer;
+  transition: transform .15s ease, background .2s ease, box-shadow .2s ease;
+  user-select: none;
+}
+
+.carousel button.prev { left: 12px; }
+.carousel button.next { right: 12px; }
+
+.carousel button:hover {
+  background: rgba(0,0,0,.50);
+  box-shadow: 0 4px 14px rgba(0,0,0,.35);
+}
+
+.carousel button:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+/* Opcional: agrandar en móvil para mejor accesibilidad */
+@media (max-width: 640px) {
+  .carousel button { width: 52px; height: 52px; font-size: 22px; }
+}
+
+.card img.img-fit {
+  width: 100%;
+  height: 220px;        /* 👈 ajusta este valor para que no se vean tan altas */
+  object-fit: cover;    /* recorta y centra la imagen */
+  object-position: center; /* centra la parte importante */
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+.card h3,
+.card p {
+  margin-top: 10px;
+  text-align: center;   /* opcional, si quieres centrado */
+}
+
+
+
+
