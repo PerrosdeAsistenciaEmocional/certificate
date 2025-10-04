@@ -159,6 +159,49 @@ a:hover{text-decoration:underline}
   text-align: center;   /* opcional, si quieres centrado */
 }
 
+@media print {
+  body, .card, .section {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background-color: #0b1220 !important; /* el color que uses */
+    color: #fff !important; /* para contraste */
+  }
+}
+
+@media print {
+  html, body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background-color: #0b1220 !important; /* 👈 tu azul */
+    color: #ffffff !important;
+    height: 100%;
+  }
+
+  /* Para que el fondo cubra cada hoja completa */
+  @page {
+    size: A4;
+    margin: 0; /* quita márgenes que dejan borde blanco */
+    background: #0b1220;
+  }
+
+  /* Opcional: si quieres ocultar header/nav/botones al imprimir */
+  nav, .footer, .btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .section .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .section .grid img {
+    width: 100%;
+    max-width: 280px; /* para que no se haga gigante */
+    margin: 20px auto 0;
+    display: block;
+  }
+}
 
 
 
